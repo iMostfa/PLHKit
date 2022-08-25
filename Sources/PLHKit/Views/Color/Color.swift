@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public struct Color: View, Hashable {
+public struct Color: PLHView, Hashable {
 
     public typealias Body = Swift.Never
 

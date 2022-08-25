@@ -11,7 +11,7 @@ extension LayoutAlgorithms {
 
     public class Padding: LayoutAlgorithm {
 
-        public let padding: ViewModifiers.Padding
+        public let padding: PLHViewModifiers.Padding
 
         /// Modified node
         public let node: LayoutNode
@@ -22,7 +22,7 @@ extension LayoutAlgorithms {
         private let defaultPadding: CGFloat
 
 
-        public init(padding: ViewModifiers.Padding, node: LayoutNode, defaultPadding: CGFloat, screenScale: CGFloat = 2) {
+        public init(padding: PLHViewModifiers.Padding, node: LayoutNode, defaultPadding: CGFloat, screenScale: CGFloat = 2) {
             self.padding = padding
             self.node = node
             self.screenScale = screenScale

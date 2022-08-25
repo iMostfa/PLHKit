@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public protocol Shape: View {
+public protocol Shape: PLHView {
 
     func path(in rect: CGRect) -> Path
 }
@@ -34,7 +34,7 @@ public struct ForegroundStyle: ShapeStyle {
     @inlinable public init() {}
 }
 
-public struct ShapeView<S: Shape, SS: ShapeStyle>: View {
+public struct ShapeView<S: Shape, SS: ShapeStyle>: PLHView {
 
     public typealias Body = Swift.Never
 

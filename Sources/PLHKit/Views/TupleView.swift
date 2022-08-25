@@ -16,7 +16,7 @@ extension TupleView: TransientContainerView {
 }
 
 
-public struct TupleView<T>: View {
+public struct TupleView<T>: PLHView {
 
     public typealias Body = Swift.Never
 

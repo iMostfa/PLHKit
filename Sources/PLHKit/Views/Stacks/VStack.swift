@@ -30,7 +30,7 @@ extension HorizontalAlignment {
     }
 }
 
-public struct VStack<Content: View>: View {
+public struct VStack<Content: PLHView>: PLHView {
     
     public typealias Body = Swift.Never
     

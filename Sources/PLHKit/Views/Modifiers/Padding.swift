@@ -8,9 +8,9 @@
 import UIKit
 
 
-extension ViewModifiers {
+extension PLHViewModifiers {
 
-    public struct Padding: ViewModifier, Layout {
+    public struct Padding: PLHViewModifier, Layout {
         
         public let top: CGFloat?
         public let bottom: CGFloat?
@@ -41,22 +41,22 @@ extension ViewModifiers {
     }
 }
 
-extension View {
+extension PLHView {
 
     @inlinable
-    public func padding(_ insets: EdgeInsets) -> ModifiedContent<Self, ViewModifiers.Padding> {
-        return modifier(ViewModifiers.Padding(insets))
+    public func padding(_ insets: EdgeInsets) -> ModifiedContent<Self, PLHViewModifiers.Padding> {
+        return modifier(PLHViewModifiers.Padding(insets))
     }
 
     @inlinable
-    public func padding(_ insets: CGFloat? = nil) -> ModifiedContent<Self, ViewModifiers.Padding> {
-        return modifier(ViewModifiers.Padding(insets))
+    public func padding(_ insets: CGFloat? = nil) -> ModifiedContent<Self, PLHViewModifiers.Padding> {
+        return modifier(PLHViewModifiers.Padding(insets))
     }
 
     @inlinable
-    public func padding(_ edges: Edge.Set = .all, _ length: CGFloat? = nil) -> ModifiedContent<Self, ViewModifiers.Padding> {
+    public func padding(_ edges: Edge.Set = .all, _ length: CGFloat? = nil) -> ModifiedContent<Self, PLHViewModifiers.Padding> {
         return modifier(
-            ViewModifiers.Padding(
+            PLHViewModifiers.Padding(
                 top: edges.contains(.top) ? length : 0,
                 bottom: edges.contains(.bottom) ? length : 0,
                 leading: edges.contains(.leading) ? length : 0,
@@ -69,7 +69,7 @@ extension View {
 
 
 
-public struct ModifiedContent<Content, Modifier>: View where Content: View, Modifier: ViewModifier {
+public struct ModifiedContent<Content, Modifier>: PLHView where Content: PLHView, Modifier: PLHViewModifier {
 
     public typealias Body = Swift.Never
 
@@ -86,10 +86,10 @@ public struct ModifiedContent<Content, Modifier>: View where Content: View, Modi
 extension ModifiedContent: Equatable where Content: Equatable, Modifier: Equatable {
 }
 
-extension View {
+extension PLHView {
 
     @inlinable
-    public func modifier<Modifier: ViewModifier>(_ modifier: Modifier) -> ModifiedContent<Self, Modifier> {
+    public func modifier<Modifier: PLHViewModifier>(_ modifier: Modifier) -> ModifiedContent<Self, Modifier> {
         return ModifiedContent(content: self, modifier: modifier)
     }
 }

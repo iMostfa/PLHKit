@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct Spacer: View, Equatable {
+public struct Spacer: PLHView, Equatable {
     
     public typealias Body = Swift.Never
 

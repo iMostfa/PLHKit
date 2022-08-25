@@ -8,7 +8,7 @@
 import UIKit
 
 
-extension ViewModifiers.Padding: UIKitNodeModifierResolvable {
+extension PLHViewModifiers.Padding: UIKitNodeModifierResolvable {
 
     private class Node: UIKitNodeModifier {
 
@@ -20,9 +20,9 @@ extension ViewModifiers.Padding: UIKitNodeModifierResolvable {
         
         var viewModifier: ViewModifier!
         
-        typealias ViewModifier = ViewModifiers.Padding
+        typealias ViewModifier = PLHViewModifiers.Padding
 
-        func update(viewModifier: ViewModifiers.Padding, context: inout Context) {
+        func update(viewModifier: PLHViewModifiers.Padding, context: inout Context) {
             self.viewModifier = viewModifier
             self.defaultPadding = context.environment.padding
         }
@@ -71,9 +71,9 @@ public protocol AnyPDFNodeModifier {
 
 public protocol UIKitNodeModifier: AnyPDFNodeModifier {
 
-    associatedtype ViewModifier: SomePLHViewModifier
+    associatedtype PLHViewModifier: SomePLHViewModifier
 
-    func update(viewModifier: ViewModifier, context: inout Context)
+    func update(viewModifier: PLHViewModifier, context: inout Context)
 }
 
 extension AnyPDFNodeModifier {
@@ -102,7 +102,7 @@ extension AnyPDFNodeModifier {
 extension UIKitNodeModifier {
 
     public func update(viewModifier: SomePLHViewModifier, context: inout Context) {
-        update(viewModifier: viewModifier as! ViewModifier, context: &context)
+        update(viewModifier: viewModifier as! PLHViewModifier, context: &context)
     }
 }
 

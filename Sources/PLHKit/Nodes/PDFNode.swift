@@ -9,14 +9,14 @@ import UIKit
 
 public protocol PDFNode: AnyPDFNode {
 
-    associatedtype View: SomePLHView
+    associatedtype PLHView: SomePLHView
 
-    func update(view: View, context: Context)
+    func update(view: PLHView, context: Context)
 }
 
 extension PDFNode {
 
     public func update(view: SomePLHView, context: Context) {
-        update(view: view as! View, context: context)
+        update(view: view as! PLHView, context: context)
     }
 }

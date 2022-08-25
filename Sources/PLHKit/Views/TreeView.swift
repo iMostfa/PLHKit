@@ -7,11 +7,11 @@
 
 import Foundation
 
-public enum TreeView: View {
+public enum TreeView: PLHView {
     
     public typealias Body = Swift.Never
     
-    public struct Tree<Root: Layout, Content: View>: View {
+    public struct Tree<Root: Layout, Content: PLHView>: PLHView {
         
         public typealias Body = Swift.Never
         

@@ -7,15 +7,15 @@
 
 import UIKit
 
-public protocol View: SomePLHView {
+public protocol PLHView: SomePLHView {
 
-    associatedtype Body: View
+    associatedtype Body: PLHView
 
     var body: Body { get }
 }
 
 
-extension View {
+extension PLHView {
 
     public var body: SomePLHView {
         return (body as Body) as SomePLHView

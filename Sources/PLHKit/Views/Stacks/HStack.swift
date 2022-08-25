@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public struct HStack<Content: View>: View {
+public struct HStack<Content: PLHView>: PLHView {
 
     public typealias Body = Swift.Never
 

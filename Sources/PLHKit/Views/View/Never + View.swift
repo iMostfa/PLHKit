@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Never: View {
+extension Never: PLHView {
     
     public var body: Never {
         fatalError()
@@ -15,7 +15,7 @@ extension Never: View {
 }
 
 
-extension View where Body == Never {
+extension PLHView where Body == Never {
 
     public var body: Never {
         fatalError()

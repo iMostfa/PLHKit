@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct EmptyView: View, Equatable {
+public struct EmptyView: PLHView, Equatable {
 
     public typealias Body = Swift.Never
 

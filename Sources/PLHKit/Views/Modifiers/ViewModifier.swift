@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ViewModifiers {
+public enum PLHViewModifiers {
     
 }
 
@@ -18,30 +18,30 @@ public protocol SomePLHViewModifier {
 }
 
 
-public protocol ViewModifier: SomePLHViewModifier {
+public protocol PLHViewModifier: SomePLHViewModifier {
 
-    associatedtype Body: View
+    associatedtype Body: PLHView
 
     typealias Content = ViewModifierContent<Self>
 
     func body(content: Content) -> Body
 }
 
-extension ViewModifier {
+extension PLHViewModifier {
 
     public func body(content: SomePLHView) -> SomePLHView {
         return (body(content: Content(content, modifier: self)) as Body) as SomePLHView
     }
 }
 
-extension ViewModifier where Body == Never {
+extension PLHViewModifier where Body == Never {
 
     public func body(content: Content) -> Never {
         fatalError()
     }
 }
 
-public struct ViewModifierContent<VM: SomePLHViewModifier>: View {
+public struct ViewModifierContent<VM: SomePLHViewModifier>: PLHView {
 
     public let view: SomePLHView
     public let modifier: VM

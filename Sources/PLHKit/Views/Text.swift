@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct Text: View, Hashable, ForegroundedView {
+public struct Text: PLHView, Hashable, ForegroundedView {
    
     var foregroundColor: UIColor = UIColor.systemBlue
     internal var backgroundColor: UIColor = .clear
