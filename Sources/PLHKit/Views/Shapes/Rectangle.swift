@@ -15,7 +15,7 @@ public struct Rectangle: Shape, Equatable {
         self.size = size
     }
     
-    public var foregroundColor: UIColor = UIColor.blue
+    public var foregroundColor: UIColor = UIColor.black
     
     var size: CGSize
     
