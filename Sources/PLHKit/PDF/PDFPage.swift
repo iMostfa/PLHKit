@@ -7,9 +7,9 @@
 
 import UIKit
 
-struct PDFPage {
+public struct PDFPage {
     
-    enum Paper {
+    public enum Paper {
         case A4
         case custom(CGFloat, CGFloat)
         
@@ -32,7 +32,7 @@ struct PDFPage {
         drawPage()
     }
     
-    init(_ paper:  Paper = .A4, @PDFUIBuilder _ content: () -> SomePLHView) {
+    public init(_ paper:  Paper = .A4, @PDFUIBuilder _ content: () -> SomePLHView) {
         let paperSize = paper.size()
         let rect: CGRect =  .init(origin: .zero, size: .init(width: paperSize.width, height:paperSize.height))
         self.rect = rect

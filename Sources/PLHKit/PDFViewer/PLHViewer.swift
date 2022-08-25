@@ -7,21 +7,20 @@
 
 import SwiftUI
 
-struct PLHViewer: View {
+public struct PLHViewer: View {
     let PDFPage: PDFPage
   
-    init(_ creator: () -> PDFPage) {
+    public init(_ creator: () -> PDFPage) {
         self.PDFPage = creator()
     }
     
-    var body: some View {
-       // PDFViewSUI(data: self.PDFPage.body)
+    public var body: some View {
         PDFPreviewer(data: PDFPage.body)
     }
 }
 
-struct PDFCreatorPreview_Previews: PreviewProvider {
-    static var previews: some SwiftUI.View {
+public struct PDFCreatorPreview_Previews: PreviewProvider {
+    public static var previews: some SwiftUI.View {
         PLHViewer.init {
             PDFPage {
                 Text("Hello")

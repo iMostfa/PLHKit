@@ -5,7 +5,7 @@
 //  Created by Mostfa Essam on 21/08/2022.
 //
 
-struct PDFFile {
+public struct PDFFile {
     var pages: [PDFPage] = []
     
     init(_ pages: () -> [PDFPage]) {

@@ -9,32 +9,30 @@ import SwiftUI
 import PDFKit
 
 
-typealias PDFPreviewer = PDFViewer.Previewer
+public typealias PDFPreviewer = PDFViewer.Previewer
 
-enum PDFViewer {
+public enum PDFViewer {
     
-    struct Previewer: UIViewRepresentable {
+   public struct Previewer: UIViewRepresentable {
         
-        typealias UIViewType = PDFView
+       public typealias UIViewType = PDFView
         var data: Data
         
         init(data : Data) {
             self.data = data
         }
         
-        func updateUIView(_ uiView: PDFView, context: UIViewRepresentableContext<PDFPreviewer>) {
+       public func updateUIView(_ uiView: PDFView, context: UIViewRepresentableContext<PDFPreviewer>) {
                 return
         }
       
-        func makeUIView(context: UIViewRepresentableContext<PDFPreviewer>) -> UIViewType {
-            let pdfView = PDFView()
-
-       
-                pdfView.document = PDFDocument(data: data)
-    
-
-            return pdfView
-        }
+       public func makeUIView(context: UIViewRepresentableContext<PDFPreviewer>) -> UIViewType {
+           
+           let pdfView = PDFView()
+           pdfView.autoScales = true
+           pdfView.document = PDFDocument(data: data)
+           return pdfView
+       }
     }
 
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-@resultBuilder struct PDFUIBuilder {
+@resultBuilder public struct PDFUIBuilder {
     static func buildArray<Content>(_ components: [Content]) -> TupleView<[Content]> where Content: PLHView {
         return TupleView.init(components)
     }
