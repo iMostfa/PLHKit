@@ -11,7 +11,7 @@ import UIKit
 public struct Circle: Shape, Equatable {
 
     internal var height: CGFloat
-    internal var foregroundColor: UIColor = UIColor.blue
+    public var foregroundColor: UIColor = UIColor.blue
     
     public init(height: CGFloat) {
         self.height = height
