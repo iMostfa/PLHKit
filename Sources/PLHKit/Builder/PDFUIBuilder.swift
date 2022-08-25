@@ -8,29 +8,26 @@
 import Foundation
 
 @resultBuilder public struct PDFUIBuilder {
-    static func buildArray<Content>(_ components: [Content]) -> TupleView<[Content]> where Content: PLHView {
+    public static func buildArray<Content>(_ components: [Content]) -> TupleView<[Content]> where Content: PLHView {
         return TupleView.init(components)
     }
-    
     
     public static func buildBlock<Content>(_ content: Content) -> Content where Content: PLHView {
         return content
     }
     
-    static func buildOptional<Content> (_ component:Content?) -> Content? {
+    public static func buildOptional<Content> (_ component:Content?) -> Content? {
         return component
     }
     public static func buildBlock() -> EmptyView {
         return EmptyView()
     }
     
-    
-    
-    static func buildEither<Content: PLHView>(second component: Content) -> Content  {
+    public static func buildEither<Content: PLHView>(second component: Content) -> Content  {
         return component
     }
     
-    static func buildEither<Content: PLHView>(first component: Content) -> Content  {
+   public  static func buildEither<Content: PLHView>(first component: Content) -> Content  {
         return component
     }
 }
