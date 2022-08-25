@@ -56,14 +56,14 @@ extension Circle: PDFNodeResolvable  {
     }
 }
 
-protocol ForegroundedView {
+public protocol ForegroundedView {
     var foregroundColor: UIColor { get set }
     func foregroundColor(_ color: UIColor) -> Self
 }
 
 extension ForegroundedView {
     
-    func foregroundColor(_ color: UIColor) -> Self {
+    public func foregroundColor(_ color: UIColor) -> Self {
         var copy = self
         copy.foregroundColor = color
         return copy

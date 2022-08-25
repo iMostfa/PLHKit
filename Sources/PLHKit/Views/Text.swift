@@ -25,19 +25,19 @@ public struct Text: PLHView, Hashable, ForegroundedView {
 }
 
 extension Text {
-    func fontSize(_ size: CGFloat) -> Self {
+    public func fontSize(_ size: CGFloat) -> Self {
         var copy = self
         copy.fontSize = size
         return copy
     }
-    func fontWeight(_ weight: UIFont.Weight) -> Self {
+    public func fontWeight(_ weight: UIFont.Weight) -> Self {
         var copy = self
         copy.fontWeight = weight
         return copy
 
     }
     
-    func background(color: UIColor) -> Self {
+    public func background(color: UIColor) -> Self {
         var copy = self
         copy.backgroundColor = color
         return copy
