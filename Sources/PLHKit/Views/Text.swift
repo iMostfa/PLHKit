@@ -9,7 +9,7 @@ import UIKit
 
 public struct Text: PLHView, Hashable, ForegroundedView {
    
-    public var foregroundColor: UIColor = UIColor.systemBlue
+    public var foregroundColor: UIColor = UIColor.black
     internal var backgroundColor: UIColor = .clear
     internal var fontWeight: UIFont.Weight = .regular
     internal var fontSize: CGFloat = 13
