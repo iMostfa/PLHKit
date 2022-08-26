@@ -61,7 +61,7 @@ extension Text: PDFNodeResolvable {
             var textAttributes = [
               NSAttributedString.Key.paragraphStyle: paragraphStyle,
               NSAttributedString.Key.foregroundColor: text.foregroundColor,
-              NSAttributedString.Key.font: UIFont.systemFont(ofSize: text.fontSize, weight: text.fontWeight)
+              NSAttributedString.Key.font: text.font
             ]
             
             

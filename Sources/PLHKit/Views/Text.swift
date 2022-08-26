@@ -13,6 +13,8 @@ public struct Text: PLHView, Hashable, ForegroundedView {
     internal var backgroundColor: UIColor = .clear
     internal var fontWeight: UIFont.Weight = .regular
     internal var fontSize: CGFloat = 13
+    internal var font: UIFont = UIFont.systemFont(ofSize: 13)
+    
     public typealias Body = Swift.Never
 
     public let storage: String
@@ -25,6 +27,13 @@ public struct Text: PLHView, Hashable, ForegroundedView {
 }
 
 extension Text {
+    
+    public func font(_ font: UIFont) -> Self {
+        var copy = self
+        copy.font = font
+        return copy
+    }
+    
     public func fontSize(_ size: CGFloat) -> Self {
         var copy = self
         copy.fontSize = size
