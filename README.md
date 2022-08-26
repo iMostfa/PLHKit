@@ -1,6 +1,6 @@
 # PLHKit
 
-> PLH is a tribute to Portsaid Light House, Port Said Lighthouse was the first building in the world created with reinforced concrete.
+> PLH is a tribute to Portsaid Light House, Port Said Lighthouse was the first building in the world created with reinforced concrete, also portsaid where i was born.
 > 
 
 ****
@@ -97,7 +97,8 @@ Current features in PLHKit are limited and we are working on implementing more
 - [x]  Basic support for shapes
 - [x]  Basic support for Text
 - [x]  Support for PDFEditor Viewer to work like SwiftUI
-- [ ]  Basic support for HSTack, VSTack
+- [x]  Basic support for HSTack, VSTack
+- [ ]  RTL Support
 - [ ]  Support Images
 - [ ]  Support Text with constrained width but no height
 - [ ]  Support Multiple Pages
