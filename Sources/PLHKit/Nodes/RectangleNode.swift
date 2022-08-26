@@ -28,7 +28,6 @@ extension Rectangle: PDFNodeResolvable  {
             let rect = targetSize
             let path = UIBezierPath.init(roundedRect: .init(origin: .zero, size: rect), cornerRadius: 10)
             
-            print("Layout size \(path.bounds) ")
             return rectangle!.size
       
         }
