@@ -28,7 +28,7 @@ public struct PDFPage {
     private var content: SomePLHView
     private var rect: CGRect
     
-    var body: Data {
+    public var body: Data {
         drawPage()
     }
     
