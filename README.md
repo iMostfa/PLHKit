@@ -99,10 +99,10 @@ Current features in PLHKit are limited and we are working on implementing more
 - [x]  Support for PDFEditor Viewer to work like SwiftUI
 - [x]  Basic support for HSTack, VSTack
 - [ ]  RTL Support
-- [ ]  Support Images
-- [ ]  Support Text with constrained width but no height
+- [x]  Support Images
+- [x]   Support Text with constrained width but no height
 - [ ]  Support Multiple Pages
-- [ ]  Support text fonts
+- [x]  Support text fonts
 - [ ]  add Alignment modifier
 
 ## Credits
