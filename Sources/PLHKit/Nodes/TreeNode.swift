@@ -27,6 +27,10 @@ extension TreeView.Tree: PDFNodeResolvable {
             } else if let view = view as? HStack<Content> {
                 self.nodes = view.tree.content.resolve(context: context, cachedNodes: nodes ?? [])
                 self.layoutAlgorithm = view.tree.root.layoutAlgorithm(nodes: nodes, env: context.environment)
+            } else if let view = view as? ZStack<Content> {
+                self.nodes = view.tree.content.resolve(context: context, cachedNodes: nodes ?? [])
+                self.layoutAlgorithm = view.tree.root.layoutAlgorithm(nodes: nodes, env: context.environment)
+
             }  else {
                 fatalError()
             }
