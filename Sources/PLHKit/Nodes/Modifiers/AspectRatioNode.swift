@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension PLHViewModifiers.AspectRatio: UIKitNodeModifierResolvable {
+extension PLHViewModifiers.AspectRatio: PLHKitNodeModifierResolvable {
       
-    private class Node: UIKitNodeModifier {
+    private class Node: PLHKitNodeModifier {
 
         var hierarchyIdentifier: String {
             "AspectRatio"

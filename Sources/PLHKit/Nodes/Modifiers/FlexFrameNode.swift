@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension PLHViewModifiers.FlexFrame: UIKitNodeModifierResolvable {
+extension PLHViewModifiers.FlexFrame: PLHKitNodeModifierResolvable {
 
-    private class Node: UIKitNodeModifier {
+    private class Node: PLHKitNodeModifier {
 
         var hierarchyIdentifier: String {
             "FlexFrame"

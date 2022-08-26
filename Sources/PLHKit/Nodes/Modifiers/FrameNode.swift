@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension PLHViewModifiers.Frame: UIKitNodeModifierResolvable {
+extension PLHViewModifiers.Frame: PLHKitNodeModifierResolvable {
 
-    private class Node: UIKitNodeModifier {
+    private class Node: PLHKitNodeModifier {
 
         var hierarchyIdentifier: String {
             "Frame"

@@ -8,9 +8,9 @@
 import UIKit
 
 
-extension PLHViewModifiers.Padding: UIKitNodeModifierResolvable {
+extension PLHViewModifiers.Padding: PLHKitNodeModifierResolvable {
 
-    private class Node: UIKitNodeModifier {
+    private class Node: PLHKitNodeModifier {
 
         var hierarchyIdentifier: String {
             "Padding"
@@ -69,7 +69,7 @@ public protocol AnyPDFNodeModifier {
     func layout(in container: Container, bounds: Bounds, pass: LayoutPass, node: AnyPDFNode)
 }
 
-public protocol UIKitNodeModifier: AnyPDFNodeModifier {
+public protocol PLHKitNodeModifier: AnyPDFNodeModifier {
 
     associatedtype PLHViewModifier: SomePLHViewModifier
 
@@ -99,7 +99,7 @@ extension AnyPDFNodeModifier {
     }
 }
 
-extension UIKitNodeModifier {
+extension PLHKitNodeModifier {
 
     public func update(viewModifier: SomePLHViewModifier, context: inout Context) {
         update(viewModifier: viewModifier as! PLHViewModifier, context: &context)
@@ -107,14 +107,14 @@ extension UIKitNodeModifier {
 }
 
 
-protocol UIKitNodeModifierResolvable {
+protocol PLHKitNodeModifierResolvable {
     func resolve(context: Context, cachedNodeModifier: AnyPDFNodeModifier?) -> AnyPDFNodeModifier
 }
 
 extension SomePLHViewModifier {
 
     public func resolve(context: inout Context, cachedNodeModifier: AnyPDFNodeModifier?) -> AnyPDFNodeModifier? {
-        if let viewModifier = self as? UIKitNodeModifierResolvable {
+        if let viewModifier = self as? PLHKitNodeModifierResolvable {
             let resolvedNodeModifier = viewModifier.resolve(context: context, cachedNodeModifier: cachedNodeModifier)
             resolvedNodeModifier.update(viewModifier: self, context: &context)
             return resolvedNodeModifier
