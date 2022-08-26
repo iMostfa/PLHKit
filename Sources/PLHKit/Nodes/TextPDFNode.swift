@@ -43,8 +43,10 @@ extension Text: PDFNodeResolvable {
             
             //TODO: - Reduce NSAttributedString Inits
             let attributedString = NSAttributedString.init(string: text.storage, attributes: textAttributes)
+           
+            let neededBoundingBox = attributedString.boundingRect(with: .init(width: targetSize.width, height: .infinity), options: [.usesFontLeading, .usesLineFragmentOrigin], context: nil)
 
-            return attributedString.size()
+            return neededBoundingBox.size
         }
 
         func layout(in container: Container, bounds: Bounds, pass: LayoutPass) {
@@ -68,8 +70,12 @@ extension Text: PDFNodeResolvable {
             if text.backgroundColor != UIColor.clear {
                 textAttributes[NSAttributedString.Key.backgroundColor] = text.backgroundColor
             }
-            let att = NSAttributedString.init(string: text.storage, attributes: textAttributes)
-            att.draw(in: CGRect.init(origin: bounds.origin, size: bounds.size))
+            
+            let attributedString = NSAttributedString.init(string: text.storage, attributes: textAttributes)
+         
+            let neededBoundingBox = attributedString.boundingRect(with: .init(width: bounds.size.width, height: .infinity), options: [.usesFontLeading, .usesLineFragmentOrigin], context: nil)
+
+            attributedString.draw(in: CGRect.init(origin: bounds.origin, size: neededBoundingBox.size))
             
         }
 
