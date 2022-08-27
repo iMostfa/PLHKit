@@ -22,6 +22,11 @@ Text("Hello World ! 🌊")
 ![Screenshot](screenshot4.png)
 ![Screenshot](screenshot2.png)
 
+## Current Stage
+
+This project is still under development, it’s working but we still have a lot of things to be done..
+also, i'm still discoverting the world of DSLs and layout algrothims, your contributations and notes are highly apperciated and welcomed. 
+
 ## How To use
 
 The simplest PDFFile is created from a single PDFPage, and you can preview a PDFFile using PLHViewer, so you can have Live Editing !
@@ -97,9 +102,11 @@ Current features in PLHKit are limited and we are working on implementing more
 - [x]  Support Multiple Pages
 - [x]  Support text fonts
 - [ ]  add Alignment modifier
+- [ ]  Support Mac Devices ?
 - [ ] Example Project 
 
 ## Credits
 
-- ****Mockingbird**** Developers
-- Portsaid City <3
+- ****Mockingbird**** Developers.
+- Portsaid City And my friends. 🌊
+
