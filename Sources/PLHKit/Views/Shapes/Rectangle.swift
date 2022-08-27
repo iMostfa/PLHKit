@@ -15,8 +15,13 @@ public struct Rectangle: Shape, Equatable {
         self.size = size
     }
     
-    public var foregroundColor: UIColor = UIColor.black
     
+    public init(width: CGFloat, height: CGFloat) {
+        self.init(size: .init(width: width, height: height))
+    }
+    
+    public var foregroundColor: UIColor = UIColor.black
+    public var cornerRadius: CGFloat = 0
     var size: CGSize
     
     @inlinable
@@ -31,7 +36,12 @@ public enum RoundedCornerStyle: Hashable {
 }
 
 
-extension Rectangle: ForegroundedView {
-
-
+extension Rectangle {
+    public func cornerRadius(_ radii: CGFloat) -> Self {
+        var copy = self
+        copy.cornerRadius = radii
+        return copy
+    }
 }
+
+extension Rectangle: ForegroundedView { }

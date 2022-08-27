@@ -38,7 +38,7 @@ extension Text: PDFNodeResolvable {
 
             let textAttributes = [
               NSAttributedString.Key.paragraphStyle: paragraphStyle,
-              NSAttributedString.Key.font: UIFont.init(name: text.font.fontName, size: text.fontSize)
+              NSAttributedString.Key.font: UIFont.init(name: text.font.fontName, size: text.fontSize) ?? UIFont.systemFont(ofSize: 13)
             ]
             
             //TODO: - Reduce NSAttributedString Inits
@@ -63,7 +63,7 @@ extension Text: PDFNodeResolvable {
             var textAttributes = [
               NSAttributedString.Key.paragraphStyle: paragraphStyle,
               NSAttributedString.Key.foregroundColor: text.foregroundColor,
-              NSAttributedString.Key.font: UIFont.init(name: text.font.fontName, size: text.fontSize)
+              NSAttributedString.Key.font: UIFont.init(name: text.font.fontName, size: text.fontSize) ?? UIFont.systemFont(ofSize: 13)
             ]
             
             

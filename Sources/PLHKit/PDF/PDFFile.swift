@@ -57,7 +57,7 @@ extension PDFFile {
         case A4
         case custom(CGFloat, CGFloat)
         
-        func size() -> CGSize {
+        public func size() -> CGSize {
             switch self {
                 
             case .A4:

@@ -52,6 +52,13 @@ extension LayoutAlgorithms {
                     width: viewSize.width,
                     height: viewSize.height
                 )
+            case .leading:
+                rect = CGRect(
+                    x: 0 ,
+                    y: 0,
+                    width: viewSize.width,
+                    height: viewSize.height
+                )
             default:
                 fatalError("TODO")
             }

@@ -25,21 +25,23 @@ extension Rectangle: PDFNodeResolvable  {
 
         func layoutSize(fitting targetSize: CGSize, pass: LayoutPass) -> CGSize {
             
-            let rect = targetSize
-            let path = UIBezierPath.init(roundedRect: .init(origin: .zero, size: rect), cornerRadius: 10)
             
             return rectangle!.size
       
         }
 
         func layout(in container: Container, bounds: Bounds, pass: LayoutPass) {
-            let path = UIBezierPath.init(roundedRect: .init(origin: bounds.origin, size: bounds.size), cornerRadius: 10)
+            guard let rectangle = rectangle else {
+                return assertionFailure("Can't get the rectangle PLHView")
+            }
+
+            let path = UIBezierPath.init(roundedRect: .init(origin: bounds.origin, size: bounds.size), cornerRadius: rectangle.cornerRadius)
 
             let drawContext = container.renderer.cgContext
          
             drawContext.saveGState()
             drawContext.addPath(path.cgPath)
-            drawContext.setFillColor(rectangle!.foregroundColor.cgColor)
+            drawContext.setFillColor(rectangle.foregroundColor.cgColor)
             drawContext.fillPath()
 
             drawContext.restoreGState()
