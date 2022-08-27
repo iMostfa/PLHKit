@@ -7,91 +7,81 @@
 
 PLHKit is a Swift DSL for Rendering and creating PDF Files. PLHKit aims to provide Friendly APIs like what you are already familiar with in SwiftUI.
 
-and it’s currently Experimental 
+and it’s currently ****Experimental****
 
-You can get amazing pages, by simple code like the this
+You can create beautiful pages by using syntax similar to what’s used in SwiftUI
 
+```swift
+VStack { 
+Text("Hello World ! 🌊")
+}
+```
+![Screenshot](screenshot6.png)
 ![Screenshot](screenshot1.png)
 ![Screenshot](screenshot3.png)
 ![Screenshot](screenshot4.png)
 ![Screenshot](screenshot2.png)
 
+## How To use
+
+The simplest PDFFile is created from a single PDFPage, and you can preview a PDFFile using PLHViewer, so you can have Live Editing !
+
+ 
+
 ```swift
-PDFPage {
+let page1 = PDFPage {
         VStack {
-          Text("Hello World")
-            .foregroundColor(.black)
-            .padding(10)
-          
-          Text("iMostfa")
-            .foregroundColor(.systemPurple)
-            .fontSize(22)
-          
-          VStack(spacing: 5) {
-            for i in 5 ..< 5 {
-              Text("Hello \(i - 5)")
-                .foregroundColor(UIColor.systemGreen)
-                .fontSize(CGFloat(Double(i) * 2.5))
-              
-              
-            }
-          }
-          
-          
-          HStack {
-            for _ in 1 ..< 4 {
-              Circle(height: 120)
-                .foregroundColor(.random)
-              
-            }
-          }
-          
-          
-          //MARK: - Contact Details
-          HStack {
-            VStack(alignment: .leading) {
-              Text("Contact Details")
-                .fontSize(30)
-                .padding(.bottom, 12)
-              Text("Fawzi Essam")
-              Text("Software Engineer")
-              Text("Portsaid - deLesseps Bay")
-              Text("011- 109354108")
-              
-            }
+            Text("Contents")
+                .foregroundColor(UIColor.defaultGray3)
+                .font(.init(name: "Zapfino", size: 50))
+                .fontSize(45)
+                .padding(.leading, -20)
             Spacer()
-          }.padding(.horizontal, 120)
-          
-          Spacer()
-          
-          //MARK: - Bottom VStack
-          VStack(alignment: .center, spacing: 10) {
-            Rectangle(size: .init(width: 120, height: 120))
-              .foregroundColor(UIColor.systemBlue)
-            Text("VStack")
-            Text("MOSTFA ESSAM")
-              .fontWeight(.bold)
-          }
-          //MARK: - Footer
-          Spacer()
-          HStack {
-            VStack(alignment: .leading, spacing: 1 ) {
-              Rectangle(size: .init(width: 130 , height: 1))
-              
-              Text("All Copyrights are reversed to this owner of file and you shouldn't edit it. you can send it to anyone")
-                .fontWeight(.light)
-                .foregroundColor(.systemGray)
-              Text("To contact the owner of this file you should reach out to iMostfa@me.com")
-                .fontWeight(.light)
-                .foregroundColor(.systemGray)
-              
-            }
-          }.padding(.bottom, 10)
-          
         }
-        
-      }
+    }
+
+let pdfFile = PDFFile.init(pages: page1)
+let pdfData = pdfFile.body //<- Accessing PDF Body will trigger drawing Actions
+
+struct MyAmazingPDF: View {
+    
+    
+    var body: some View {
+        PLHViewer {
+            let page1 = PDFPage {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Portsaid City")
+                        .font(UIFont.defaultHeavy())
+                        .fontSize(60)
+                        .foregroundColor(.redTitleColor)
+                    
+                    Text("DATA SHEET 2022")
+                        .font(UIFont.defaultMedium())
+                        .fontSize(20)
+                        .foregroundColor(.blackTitleColor)
+                }
+            }
+            return PDFFile(pages: page1 /*, pag2, page3 */ )
+        }
+    }
+}
 ```
+
+### Installation
+
+Currently the Package is available using Swift Package Manger, and it supposed to work with iOS 12+, but live previewing is supported from iOS 13+, because it depends on SwiftUI.
+
+### Known Bugs/limitations
+
+we are still discovering bugs and limitations, here’s what’s known
+
+- Frame Alignment is limited to center, and leading.
+- Drawing takes a little bit of time (we need to cache the geometries calculations?)
+- Compiling is slow IMO (still investigating, likely because of numerical literals conversions ?)
+- Image Resizing is needed, currently you need to have the image resized before placing it.
+- Modifiers don’t go to upper nodes tree.
+- Previews are buggy (I think this’s because of the other bugs, and Xcode =) )
+- Excessive usage of padding/ VStack inside HStack ; are used because of the absence of Frame alignments.
 
 ## Features
 
@@ -107,7 +97,9 @@ Current features in PLHKit are limited and we are working on implementing more
 - [x]  Support Multiple Pages
 - [x]  Support text fonts
 - [ ]  add Alignment modifier
+- [ ] Example Project 
 
 ## Credits
 
 - ****Mockingbird**** Developers
+- Portsaid City <3
