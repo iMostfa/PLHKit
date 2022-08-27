@@ -9,8 +9,11 @@ PLHKit is a Swift DSL for Rendering and creating PDF Files. PLHKit aims to provi
 
 and it’s currently Experimental 
 
-You can get the following Page by writing the following
+You can get amazing pages, by simple code like the this
 
+![Screenshot](screenshot1.png)
+![Screenshot](screenshot3.png)
+![Screenshot](screenshot4.png)
 ![Screenshot](screenshot2.png)
 
 ```swift
