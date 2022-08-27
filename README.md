@@ -100,8 +100,8 @@ Current features in PLHKit are limited and we are working on implementing more
 - [x]  Basic support for HSTack, VSTack
 - [ ]  RTL Support
 - [x]  Support Images
-- [x]   Support Text with constrained width but no height
-- [ ]  Support Multiple Pages
+- [x]  Support Text with constrained width but no height
+- [x]  Support Multiple Pages
 - [x]  Support text fonts
 - [ ]  add Alignment modifier
 
